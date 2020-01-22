@@ -15,7 +15,11 @@ def input_to_index(user_input)
   user_input.to_i - 1
 end
 
+<<<<<<< HEAD
 def move(board, index, current_player)
+=======
+def move(board, index, current_player = "X")
+>>>>>>> a0494f03ac4f7e72c9cbe5a030c310eae2effe35
   board[index] = current_player
 end
 
@@ -32,13 +36,18 @@ def turn(board)
   input = gets.strip
   index = input_to_index(input)
   if valid_move?(board, index)
+<<<<<<< HEAD
     move(board, index, current_player(board))
+=======
+    move(board, index)
+>>>>>>> a0494f03ac4f7e72c9cbe5a030c310eae2effe35
     display_board(board)
   else
     turn(board)
   end
 end
 
+<<<<<<< HEAD
 # Define your play method below
 def play(board)
   if over?(board) == true
@@ -49,6 +58,15 @@ def play(board)
   else
     turn(board)
     play(board)
+=======
+
+# Define your play method below
+def play(board)
+  counter = 0
+  while counter < 9
+    counter +=1
+    turn(board)
+>>>>>>> a0494f03ac4f7e72c9cbe5a030c310eae2effe35
   end
 end
 
@@ -59,7 +77,7 @@ def turn_count(board)
       counter += 1
     end
   end
-return counter
+counter
 end
 
 def current_player(board)
